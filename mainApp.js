@@ -9,7 +9,8 @@ mainApp.controller("myController", function($scope) {
     ];
     $scope.newUser = {};
     $scope.reset = function() {
-        console.log($scope.newUser);
+        $scope.users.push($scope.newUser);
+        $scope.newUser = {};
     }
 
 });

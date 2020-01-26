@@ -9,10 +9,11 @@ mainApp.controller("myController", function($scope) {
     ];
     $scope.newUser = {};
     $scope.clickedUser = {};
-
+    $scope.message = {};
     $scope.reset = function() {
         $scope.users.push($scope.newUser);
         $scope.newUser = {};
+        $scope.message = "A user is added in the table";
     }
     $scope.selectUser = function(user) {
         $scope.clickedUser = user;
@@ -20,7 +21,17 @@ mainApp.controller("myController", function($scope) {
     }
     $scope.deleteUser = function() {
         $scope.users.splice($scope.users.indexOf($scope.clickedUser))
-            //console.log(user);
+        $scope.message = "A user is deleted from the table";
+        //console.log(user);
+    }
+    $scope.updateUser = function() {
+        $scope.message = "User information  is updated";
+        //console.log(user);
+    }
+
+
+    $scope.clearMessage = function() {
+        $scope.message = ""; //console.log(user);
     }
 
 });

@@ -35,108 +35,129 @@
                     <td>
                         <div>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalEdit" ng-click="selectUser(user)">Edit</button>
-                            <button type="button" class="btn btn-danger ">Delete</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDel" ng-click="selectUser(user)">Delete</button>
                         </div>
-                        <div>
-
-                        </div>
-
                     </td>
                 </tr>
 
             </tbody>
         </table>
 
-    </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1>Add new User</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
 
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Add new User</h1>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">User_Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="newUser.userName">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">User_Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="newUser.userName">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Full_Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="newUser.fullName">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Full_Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="newUser.fullName">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="newUser.email">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="email">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="newUser.email">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button class="btn btn-info" ng-click="reset()" data-dismiss="modal">Submit</button> </div>
-                        </div>
-                    </form>
-                    <!--  <pre>user = {{newUser | json}}</pre> -->
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-info" ng-click="reset()" data-dismiss="modal">Submit</button> </div>
+                            </div>
+                        </form>
+                        <!--  <pre>user = {{newUser | json}}</pre> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
+
             </div>
-
         </div>
-    </div>
-    <!-- <button ng-click="reset()">Reset</button>-->
-    <div id="myModalEdit" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <!-- <button ng-click="reset()">Reset</button>-->
+        <div id="myModalEdit" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-                <div class="modal-header">
-                    <h1>Edit User</h1>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal">
+                    <div class="modal-header">
+                        <h1>Edit User</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">User_Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="clickedUser.userName">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">User_Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="clickedUser.userName">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2">Full_Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="clickedUser.fullName">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Full_Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="clickedUser.fullName">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" ng-model="clickedUser.email">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="email">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="clickedUser.email">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button class="btn btn-info" data-dismiss="modal" data-dismiss="modal">Submit</button> </div>
-                        </div>
-                    </form>
-                    <!--  <pre>user = {{newUser | json}}</pre> -->
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-info" data-dismiss="modal">Submit</button> </div>
+                            </div>
+                        </form>
+                        <!--  <pre>user = {{newUser | json}}</pre> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
+
             </div>
-
         </div>
+
+        <div id="myModalDel" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1>Are You Sure?</h1>
+                    </div>
+                    <div class="modal-body">
+                        <strong style="color: red " ;>
+                        You are going to delete {{clickedUser.userName}}!!!!
+                    </strong>
+                        <!--  <pre>user = {{newUser | json}}</pre> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button " class="btn btn-danger " data-dismiss="modal" ng-click="deleteUser()">Yes</button>
+                        <button type="button " class="btn btn-info " data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
+
+
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
 </script>

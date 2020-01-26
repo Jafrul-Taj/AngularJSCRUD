@@ -18,5 +18,9 @@ mainApp.controller("myController", function($scope) {
         $scope.clickedUser = user;
         //console.log(user);
     }
+    $scope.deleteUser = function() {
+        $scope.users.splice($scope.users.indexOf($scope.clickedUser))
+            //console.log(user);
+    }
 
 });
